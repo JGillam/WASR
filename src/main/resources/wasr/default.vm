@@ -1,0 +1,45 @@
+<html>
+<head>
+    <style>
+        body {font-family:"Arial", Arial, Sans-serif; padding: 20px}
+        #header {background-color: "black"; color: "white"; padding: 5px}
+        h2 {text-decoration:underline}
+        h3 {font-size: 14px}
+        h4 {font-size: 12px}
+
+    </style>
+    <title>Assessment Report</title></head>
+<body>
+<div id="header">
+    <h1>Web App Assessment Report</h1>
+    $header.title<br/>
+    By: $header.author<br/>
+    Date: $header.date<br/>
+</div>
+<h2>Introduction</h2>
+This report contains the results of an ethical hack assessment conducted by COMPANY for CLIENT. Boilerplate intro
+text. Acipenser potuss, tanquam rusticus candidatus.Ubi est placidus valebat? Compaters volare, tanquam altus
+luna. Buxum grandis valebat est.Vae, itineris tramitem.
+
+<h2>Scope</h2>
+$intro.scope
+
+<h2>Executive Summary</h2>
+$intro.summary
+
+<H2>Findings</H2>
+#foreach( $finding in $findings.finding )
+<H3>$foreach.count - $finding.title</H3>
+<H4>Description</H4>
+$finding.description
+<H4>Reproduction Steps</H4>
+$finding.reproduction
+#foreach ($image in $finding.images)
+<h5>$image.title</h5>
+<img src="$image.image" alt="$image.title" width="400" height="200"/>
+#end
+<H4>Recommended Remediation</H4>
+$finding.remediation
+#end
+</body>
+</html>
